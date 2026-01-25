@@ -117,6 +117,23 @@ footer{
     text-align:center;
     padding:20px;
 }
+
+/* ✅ MOBILE FIX (ADDED) */
+@media (max-width: 768px) {
+    nav{
+        padding:15px 20px;
+    }
+
+    nav h1{
+        font-size:20px;
+        letter-spacing:1px;
+    }
+
+    nav button{
+        padding:6px 14px;
+        font-size:14px;
+    }
+}
 </style>
 </head>
 
@@ -133,7 +150,11 @@ footer{
     <div class="hero">
         <div>
             <h2>Clean Today,<br>Green Tomorrow</h2>
-            <p>A modern waste management system focused on sustainability, recycling, and community responsibility.</p>
+            <p>
+                Barangay 28, Caloocan City promotes responsible waste management
+                to maintain cleanliness, safety, and a healthy environment
+                for all residents.
+            </p>
             <button onclick="showPage('services')">Explore Services</button>
         </div>
         <div>
@@ -147,16 +168,16 @@ footer{
     <h2 style="color:var(--orange);font-family:Montserrat;font-size:45px;margin-bottom:40px;">Our Services</h2>
     <div class="cards">
         <div class="card">
-            <h3>Waste Collection</h3>
-            <p>Organized and scheduled waste pickup for communities.</p>
+            <h3>Regular Garbage Collection</h3>
+            <p>Coordinated waste collection with the Caloocan City Government.</p>
         </div>
         <div class="card">
-            <h3>Recycling</h3>
-            <p>Eco-friendly recycling solutions to reduce landfill waste.</p>
+            <h3>Waste Segregation</h3>
+            <p>Encouraging proper segregation of biodegradable and non-biodegradable waste.</p>
         </div>
         <div class="card">
-            <h3>Segregation</h3>
-            <p>Proper waste segregation education and systems.</p>
+            <h3>Community Clean-Up Drives</h3>
+            <p>Barangay-led clean-up activities to maintain environmental cleanliness.</p>
         </div>
     </div>
     <br><br>
@@ -165,9 +186,12 @@ footer{
 
 <!-- ABOUT -->
 <section id="about">
-    <h2 style="font-family:Montserrat;color:var(--orange);font-size:45px;">About Us</h2>
+    <h2 style="font-family:Montserrat;color:var(--orange);font-size:45px;">About Barangay 28</h2>
     <p style="max-width:700px;font-size:18px;margin-top:20px;">
-        We aim to promote environmental awareness and responsible waste disposal using modern systems and technology.
+        Barangay 28 is an urban barangay located in Caloocan City, NCR.
+        It is a densely populated community facing waste management challenges.
+        The barangay is led by Punong Barangay Edgar “Egay” S. Galgana together
+        with the Sangguniang Barangay.
     </p>
     <br>
     <button onclick="showPage('contact')" style="background:var(--orange);color:white;padding:12px 30px;border:none;border-radius:25px;">Next Page →</button>
@@ -176,12 +200,12 @@ footer{
 <!-- CONTACT -->
 <section id="contact">
     <h2 style="font-family:Montserrat;color:var(--orange);font-size:45px;">Contact Us</h2>
-    <p>Email: wastemanagement@gmail.com</p>
-    <p>Phone: +63 900 000 0000</p>
+    <p>Barangay 28, Caloocan City</p>
+    <p>Punong Barangay: Edgar “Egay” S. Galgana</p>
 </section>
 
 <footer>
-    © 2026 Waste Management | Clean Future
+    © 2026 Barangay 28 Waste Management | Clean Community
 </footer>
 
 <script>
