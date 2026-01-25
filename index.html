@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waste Management</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --orange:#ff7a00;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Nunito',sans-serif;
+    background:var(--white);
+    color:#333;
+}
+
+/* ---------- NAVBAR ---------- */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:var(--orange);
+}
+
+nav h1{
+    font-family:'Montserrat',sans-serif;
+    color:white;
+    letter-spacing:3px;
+}
+
+nav button{
+    background:white;
+    color:var(--orange);
+    border:none;
+    padding:10px 20px;
+    font-weight:600;
+    cursor:pointer;
+    border-radius:20px;
+}
+
+/* ---------- SECTIONS ---------- */
+section{
+    min-height:100vh;
+    padding:80px 60px;
+    display:none;
+}
+
+section.active{
+    display:block;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+}
+
+.hero h2{
+    font-family:'Montserrat',sans-serif;
+    font-size:60px;
+    color:var(--orange);
+}
+
+.hero p{
+    margin:20px 0;
+    font-size:18px;
+}
+
+.hero button{
+    background:var(--orange);
+    color:white;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* ---------- CARDS ---------- */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    border:3px solid var(--orange);
+    padding:30px;
+    border-radius:30px;
+    text-align:center;
+}
+
+.card h3{
+    font-family:'Montserrat',sans-serif;
+    color:var(--orange);
+    margin-bottom:15px;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+    background:var(--orange);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <h1>WASTE MANAGEMENT</h1>
+    <button onclick="showPage('home')">Home</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+    <div class="hero">
+        <div>
+            <h2>Clean Today,<br>Green Tomorrow</h2>
+            <p>A modern waste management system focused on sustainability, recycling, and community responsibility.</p>
+            <button onclick="showPage('services')">Explore Services</button>
+        </div>
+        <div>
+            <img src="https://i.imgur.com/QZ6ZK7Q.png" style="width:100%;border-radius:40px;">
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2 style="color:var(--orange);font-family:Montserrat;font-size:45px;margin-bottom:40px;">Our Services</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Waste Collection</h3>
+            <p>Organized and scheduled waste pickup for communities.</p>
+        </div>
+        <div class="card">
+            <h3>Recycling</h3>
+            <p>Eco-friendly recycling solutions to reduce landfill waste.</p>
+        </div>
+        <div class="card">
+            <h3>Segregation</h3>
+            <p>Proper waste segregation education and systems.</p>
+        </div>
+    </div>
+    <br><br>
+    <button onclick="showPage('about')" style="background:var(--orange);color:white;padding:12px 30px;border:none;border-radius:25px;">Next Page →</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 style="font-family:Montserrat;color:var(--orange);font-size:45px;">About Us</h2>
+    <p style="max-width:700px;font-size:18px;margin-top:20px;">
+        We aim to promote environmental awareness and responsible waste disposal using modern systems and technology.
+    </p>
+    <br>
+    <button onclick="showPage('contact')" style="background:var(--orange);color:white;padding:12px 30px;border:none;border-radius:25px;">Next Page →</button>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 style="font-family:Montserrat;color:var(--orange);font-size:45px;">Contact Us</h2>
+    <p>Email: wastemanagement@gmail.com</p>
+    <p>Phone: +63 900 000 0000</p>
+</section>
+
+<footer>
+    © 2026 Waste Management | Clean Future
+</footer>
+
+<script>
+function showPage(page){
+    document.querySelectorAll("section").forEach(sec=>{
+        sec.classList.remove("active");
+    });
+    document.getElementById(page).classList.add("active");
+}
+</script>
+
+</body>
+</html>
