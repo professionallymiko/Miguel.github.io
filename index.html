@@ -5,14 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Waste Management</title>
 
-<!-- Messenger / Facebook preview -->
-<meta property="og:title" content="Waste Management Website">
-<meta property="og:description" content="Barangay 28, Caloocan City promotes responsible waste management to maintain cleanliness, safety, and a healthy environment for all residents.">
-<meta property="og:image" content="https://i.imgur.com/QZ6ZK7Q.png">
-<meta property="og:url" content="https://professionallymiko.github.io/Miguel.github.io/">
-<meta property="og:type" content="website">
-
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -23,7 +15,6 @@
     --light:#f4faf6;
 }
 
-/* RESET */
 *{
     margin:0;
     padding:0;
@@ -36,128 +27,130 @@ body{
     color:#333;
 }
 
+/* HOTLINE */
+.hotline{
+    background:var(--green);
+    color:white;
+    text-align:center;
+    padding:8px;
+    font-size:13px;
+}
+
 /* NAV */
 nav{
     display:flex;
-    justify-content:space-between;
+    flex-direction:column;
     align-items:center;
-    padding:18px 60px;
+    gap:12px;
+    padding:16px;
     background:linear-gradient(90deg,var(--green),var(--orange));
-    box-shadow:0 6px 20px rgba(0,0,0,0.15);
 }
 
 nav h1{
     font-family:'Montserrat',sans-serif;
     color:white;
+    font-size:18px;
     letter-spacing:2px;
+}
+
+.nav-links{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    width:100%;
+    max-width:320px;
 }
 
 nav button{
     background:white;
     color:var(--green);
     border:none;
-    padding:10px 22px;
+    padding:10px;
     font-weight:700;
     border-radius:25px;
     cursor:pointer;
 }
 
-/* HOTLINE */
-.hotline{
-    background:var(--green);
-    color:white;
-    text-align:center;
-    padding:10px;
-    font-size:14px;
-    letter-spacing:1px;
-}
-
 /* SECTIONS */
 section{
     min-height:100vh;
-    padding:100px 60px;
+    padding:60px 20px;
     display:none;
-    animation:fadeSlide 0.6s ease;
 }
 
 section.active{
     display:block;
 }
 
-@keyframes fadeSlide{
-    from{opacity:0;transform:translateY(30px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
 /* HERO */
 .hero{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
+    grid-template-columns:1fr;
+    gap:25px;
+    text-align:center;
 }
 
 .hero h2{
     font-family:'Montserrat',sans-serif;
-    font-size:60px;
+    font-size:34px;
     color:var(--green);
 }
 
-.hero span{
-    color:var(--orange);
-}
+.hero span{ color:var(--orange); }
 
 .hero p{
-    margin:25px 0;
-    font-size:18px;
-    line-height:1.7;
+    font-size:16px;
 }
 
 .hero button{
     background:linear-gradient(45deg,var(--orange),var(--green));
     color:white;
-    padding:16px 40px;
+    padding:12px 28px;
     border:none;
-    border-radius:35px;
-    font-size:16px;
-    cursor:pointer;
-    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+    border-radius:30px;
+    font-size:14px;
 }
 
 /* CARDS */
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:35px;
+    grid-template-columns:1fr;
+    gap:20px;
 }
 
 .card{
-    background:rgba(255,255,255,0.9);
-    backdrop-filter:blur(10px);
-    padding:40px;
-    border-radius:30px;
+    background:white;
+    padding:30px;
+    border-radius:25px;
     text-align:center;
-    box-shadow:0 20px 40px rgba(0,0,0,0.1);
-    border-top:8px solid var(--green);
+    box-shadow:0 15px 30px rgba(0,0,0,0.1);
+    border-top:6px solid var(--green);
 }
 
 .icon{
-    font-size:50px;
-    margin-bottom:15px;
+    font-size:40px;
 }
 
-.card h3{
-    font-family:'Montserrat',sans-serif;
-    color:var(--orange);
-    margin-bottom:12px;
+/* NEXT PAGE ARROW */
+.next-btn{
+    margin-top:30px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 28px;
+    font-weight:700;
+    color:var(--green);
+    background:white;
+    border:2px solid var(--green);
+    border-radius:14px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-/* MAP */
-.map{
-    margin-top:40px;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+.next-btn:hover{
+    background:var(--green);
+    color:white;
+    transform:translateX(6px);
 }
 
 /* FOOTER */
@@ -165,51 +158,8 @@ footer{
     background:linear-gradient(90deg,var(--green),var(--orange));
     color:white;
     text-align:center;
-    padding:25px;
-    font-size:14px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    nav{
-        padding:15px 20px;
-    }
-
-    .hero{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .hero h2{
-        font-size:42px;
-    }
-
-    section{
-        padding:80px 25px;
-    }
-}
-
-/* UNIQUE NEXT PAGE BUTTON */
-.next-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    padding:14px 34px;
-    font-size:16px;
-    font-weight:700;
-    color:var(--green);
-    background:var(--white);
-    border:2px solid var(--green);
-    border-radius:12px;
-    cursor:pointer;
-    transition:all 0.3s ease;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-.next-btn:hover{
-    background:var(--green);
-    color:var(--white);
-    transform:translateX(6px);
+    padding:18px;
+    font-size:13px;
 }
 </style>
 </head>
@@ -217,89 +167,55 @@ footer{
 <body>
 
 <div class="hotline">
-    📞 BARANGAY HOTLINE: (64) 888 Along-(25564)| ♻️ Waste Concerns & Clean-Up Reports
+📞 BARANGAY HOTLINE: (64) 888-Along (25564)
 </div>
 
 <nav>
     <h1>WASTE MANAGEMENT</h1>
-    <button onclick="showPage('home')">Home</button>
+    <div class="nav-links">
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('services')">Services</button>
+        <button onclick="showPage('about')">About</button>
+        <button onclick="showPage('contact')">Contact</button>
+    </div>
 </nav>
 
 <section id="home" class="active">
     <div class="hero">
-        <div>
-            <h2>Clean Today,<br><span>Green Tomorrow</span></h2>
-            <p>
-                Barangay 28, Caloocan City promotes responsible waste management
-                to ensure cleanliness, safety, and a healthier environment
-                for all residents.
-            </p>
-            <button onclick="showPage('services')">Explore Services</button>
-        </div>
-        <div>
-            <img src="am.jpeg" style="width:100%;border-radius:40px;">
-        </div>
+        <h2>Clean Today,<br><span>Green Tomorrow</span></h2>
+        <p>Barangay 28, Caloocan City promotes responsible waste management.</p>
+        <button onclick="showPage('services')">Explore Services</button>
+        <img src="am.jpeg" style="width:100%;border-radius:25px;">
     </div>
 </section>
 
 <section id="services">
-    <h2 style="font-family:Montserrat;color:var(--green);font-size:45px;margin-bottom:40px;">
-        Our Services
-    </h2>
-
+    <h2 style="font-family:Montserrat;color:var(--green);font-size:32px;">Our Services</h2>
     <div class="cards">
-        <div class="card">
-            <div class="icon">🚛</div>
-            <h3>Garbage Collection</h3>
-            <p>Scheduled waste collection coordinated with Caloocan City.</p>
-        </div>
-        <div class="card">
-            <div class="icon">♻️</div>
-            <h3>Waste Segregation</h3>
-            <p>Proper separation of biodegradable and non-biodegradable waste.</p>
-        </div>
-        <div class="card">
-            <div class="icon">🌱</div>
-            <h3>Clean-Up Drives</h3>
-            <p>Barangay-led environmental clean-up programs.</p>
-        </div>
+        <div class="card"><div class="icon">🚛</div><h3>Garbage Collection</h3></div>
+        <div class="card"><div class="icon">♻️</div><h3>Waste Segregation</h3></div>
+        <div class="card"><div class="icon">🌱</div><h3>Clean-Up Drives</h3></div>
     </div>
 
-    <br><br>
     <button class="next-btn" onclick="showPage('about')">Next Page →</button>
 </section>
 
 <section id="about">
-    <h2 style="font-family:Montserrat;color:var(--green);font-size:45px;">
-        About Barangay 28
-    </h2>
-    <p style="max-width:720px;font-size:18px;margin-top:20px;">
-        Barangay 28 is an urban barangay in Caloocan City, NCR. Due to high population
-        density, effective waste management is essential. The barangay is led by
-        Punong Barangay Edgar “Egay” S. Galgana and the Sangguniang Barangay.
-    </p>
+    <h2 style="font-family:Montserrat;color:var(--green);font-size:32px;">About Barangay 28</h2>
+    <p>Barangay 28 is an urban barangay in Caloocan City, NCR.</p>
 
-    <div class="map">
-        <iframe 
-        src="https://maps.google.com/maps?q=Caloocan%20City&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        width="100%" height="350" style="border:0;" loading="lazy"></iframe>
-    </div>
-
-    <br>
     <button class="next-btn" onclick="showPage('contact')">Next Page →</button>
 </section>
 
 <section id="contact">
-    <h2 style="font-family:Montserrat;color:var(--green);font-size:45px;">
-        Contact Us
-    </h2>
-    <p><strong>Barangay 28, Caloocan City</strong></p>
-    <p>Punong Barangay: Edgar “Egay” S. Galgana</p>
-    <p>📞 Hotline: (64) 888-Along (25564)</p>
+    <h2 style="font-family:Montserrat;color:var(--green);font-size:32px;">Contact Us</h2>
+    <p>📞 (64) 888-Along (25564) Using This phone number you can call na official to report an incident/problems
+     
+    </p>
 </section>
 
 <footer>
-    © 2026 Barangay 28 Waste Management | Clean • Green • Sustainable
+© 2026 Barangay 28 Waste Management
 </footer>
 
 <script>
