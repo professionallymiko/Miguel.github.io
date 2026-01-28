@@ -232,6 +232,22 @@ footer{
   line-height: 1.6;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
+
+/* GOOGLE MAP LINK */
+.google-map-link {
+  text-align: center;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.google-map-link a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.google-map-link a:hover {
+  text-decoration: underline;
+}
 </style>
 </head>
 
@@ -323,8 +339,17 @@ footer{
     <h2 style="font-family:Montserrat;color:var(--green);font-size:32px;">Contact Us</h2>
     <p>📞 (64) 888-Along (25564)</p>
 
+    <!-- EMBEDDED MAP -->
     <div class="map-container">
         <iframe src="https://www.google.com/maps?q=Barangay%2028%20Caloocan%20City&output=embed"></iframe>
+    </div>
+
+    <!-- CLICKABLE LINK FOR MESSENGER/FACEBOOK -->
+    <div class="google-map-link">
+        Can't see the map? 
+        <a href="https://www.google.com/maps?q=Barangay+28+Caloocan+City" target="_blank">
+            Open Map
+        </a>
     </div>
 </section>
 
