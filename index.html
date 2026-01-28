@@ -100,38 +100,16 @@ section.active{
     font-size:16px;
 }
 
-/* UNIQUE BUTTON */
+/* BUTTON */
 .explore-btn{
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 0 auto;
-    padding: 14px 36px;
-    font-weight: 800;
-    font-size: 15px;
-    color: white;
-    background: linear-gradient(45deg, var(--green), var(--orange));
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease;
-}
-
-.explore-btn::after{
-    content: "→";
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-.explore-btn:hover{
-    transform: scale(1.05);
-}
-
-.explore-btn:hover::after{
-    transform: translateX(6px);
+    margin:0 auto;
+    padding:14px 36px;
+    font-weight:800;
+    color:white;
+    background:linear-gradient(45deg,var(--green),var(--orange));
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
 }
 
 /* CARDS */
@@ -161,7 +139,6 @@ section.active{
     transition:0.4s ease;
     font-size:14px;
     color:#555;
-    line-height:1.5;
 }
 
 .card.active .card-info{
@@ -181,19 +158,6 @@ section.active{
     cursor:pointer;
 }
 
-/* MAP */
-.map-container{
-    margin-top:25px;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 12px 25px rgba(0,0,0,0.15);
-}
-.map-container iframe{
-    width:100%;
-    height:300px;
-    border:0;
-}
-
 /* FOOTER */
 footer{
     background:linear-gradient(90deg,var(--green),var(--orange));
@@ -201,52 +165,6 @@ footer{
     text-align:center;
     padding:18px;
     font-size:13px;
-}
-
-/* ABOUT PAGE INFO BUTTON */
-.info-btn {
-  background: linear-gradient(135deg, #2e7d32, #66bb6a);
-  color: white;
-  border: none;
-  padding: 14px 22px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-  margin-top: 25px;
-}
-
-.info-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.info-box {
-  display: none;
-  margin-top: 20px;
-  padding: 20px;
-  border-radius: 16px;
-  background: #ffffff;
-  color: #333;
-  line-height: 1.6;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-}
-
-/* GOOGLE MAP LINK */
-.google-map-link {
-  text-align: center;
-  margin-top: 12px;
-  font-weight: 600;
-}
-
-.google-map-link a {
-  color: var(--green);
-  text-decoration: none;
-}
-
-.google-map-link a:hover {
-  text-decoration: underline;
 }
 </style>
 </head>
@@ -261,22 +179,20 @@ footer{
         <button onclick="showPage('home')">Home</button>
         <button onclick="showPage('services')">Services</button>
         <button onclick="showPage('about')">About</button>
-        <button onclick="showPage('contact')">Contact</button>
+        <button onclick="showPage('contact')">5 W's & 1 H</button>
     </div>
 </nav>
 
+<!-- HOME -->
 <section id="home" class="active">
     <div class="hero">
         <h2>Clean Today,<br><span>Green Tomorrow</span></h2>
         <p>Barangay 28, Caloocan City promotes responsible waste management.</p>
-
-        <!-- UNIQUE BUTTON -->
-        <button class="explore-btn" onclick="showPage('services')">
-            Explore Services
-        </button>
+        <button class="explore-btn" onclick="showPage('services')">Explore Services</button>
     </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
     <h2 style="font-family:Montserrat;color:var(--green);font-size:32px;">Our Services</h2>
 
@@ -285,8 +201,7 @@ footer{
             <div class="icon">🚛</div>
             <h3>Garbage Collection</h3>
             <div class="card-info">
-                Regular collection of household waste to keep streets clean
-                and prevent health risks.
+                Regular collection of household waste.
             </div>
         </div>
 
@@ -294,16 +209,16 @@ footer{
             <div class="icon">♻️</div>
             <h3>Waste Segregation</h3>
             <div class="card-info">
-                Proper separation of biodegradable, recyclable, and residual
-                waste for recycling.
+                Proper separation of waste materials.
             </div>
         </div>
 
+        <!-- ✅ UPDATED CARD -->
         <div class="card" onclick="toggleInfo(this)">
-            <div class="icon">🌱</div>
-            <h3>Clean-Up Drives</h3>
+            <div class="icon">♻️</div>
+            <h3>Recycling Program</h3>
             <div class="card-info">
-                Community clean-up activities to promote environmental awareness.
+                Initiatives to collect and recycle reusable materials.
             </div>
         </div>
     </div>
@@ -311,45 +226,68 @@ footer{
     <button class="next-btn" onclick="showPage('about')">Next Page →</button>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
     <h2 style="font-family:Montserrat;color:var(--green);font-size:32px;">About Barangay 28</h2>
     <p>Barangay 28 is an urban barangay in Caloocan City, NCR.</p>
 
-    <!-- INFO BUTTON + HIDDEN INFO -->
-    <button class="info-btn" onclick="toggleAboutInfo()">
-        Learn More About Barangay 28 ▾
-    </button>
-
-    <div id="barangayInfo" class="info-box">
-        <p>
-            Barangay 28 is located in Caloocan City, NCR. It is a densely populated urban barangay
-            with residential areas, small businesses, and active community programs focused on
-            cleanliness, safety, and proper waste management.
-        </p>
-        <p>
-            The barangay promotes segregation of waste, recycling initiatives,
-            and regular clean-up drives to maintain a healthy environment.
-        </p>
-    </div>
-
     <button class="next-btn" onclick="showPage('contact')">Next Page →</button>
 </section>
 
+<!-- 5W1H -->
 <section id="contact">
-    <h2 style="font-family:Montserrat;color:var(--green);font-size:32px;">Contact Us</h2>
-    <p>📞 (64) 888-Along (25564)</p>
+    <h2 style="font-family:Montserrat;color:var(--green);font-size:32px;">5 W’s and 1 H</h2>
 
-    <!-- EMBEDDED MAP -->
-    <div class="map-container">
-        <iframe src="https://www.google.com/maps?q=Barangay%2028%20Caloocan%20City&output=embed"></iframe>
-    </div>
+    <div class="cards">
 
-    <!-- CLICKABLE LINK FOR MESSENGER/FACEBOOK -->
-    <div class="google-map-link">
-        Can't see the map? 
-        <a href="https://www.google.com/maps?q=Barangay+28+Caloocan+City" target="_blank">
-            Open Map
-        </a>
+        <div class="card" onclick="toggleInfo(this)">
+            <div class="icon">👤</div>
+            <h3>Who</h3>
+            <div class="card-info">
+                Residents and officials of Barangay 28.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleInfo(this)">
+            <div class="icon">📦</div>
+            <h3>What</h3>
+            <div class="card-info">
+                A waste management program.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleInfo(this)">
+            <div class="icon">📍</div>
+            <h3>Where</h3>
+            <div class="card-info">
+                Barangay 28, Caloocan City.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleInfo(this)">
+            <div class="icon">📅</div>
+            <h3>When</h3>
+            <div class="card-info">
+                Conducted regularly.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleInfo(this)">
+            <div class="icon">❓</div>
+            <h3>Why</h3>
+            <div class="card-info">
+                To keep the community clean and healthy.
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleInfo(this)">
+            <div class="icon">⚙️</div>
+            <h3>How</h3>
+            <div class="card-info">
+                Through segregation, collection, and cooperation.
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -363,12 +301,6 @@ function showPage(page){
 
 function toggleInfo(card){
     card.classList.toggle("active");
-}
-
-// ABOUT PAGE INFO BUTTON
-function toggleAboutInfo(){
-    const info = document.getElementById("barangayInfo");
-    info.style.display = info.style.display === "block" ? "none" : "block";
 }
 </script>
 
