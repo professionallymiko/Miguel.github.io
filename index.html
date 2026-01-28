@@ -158,6 +158,36 @@ section.active{
     cursor:pointer;
 }
 
+/* ABOUT PAGE INFO BUTTON */
+.info-btn {  
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);  
+  color: white;  
+  border: none;  
+  padding: 14px 22px;  
+  border-radius: 30px;  
+  font-size: 16px;  
+  font-weight: 600;  
+  cursor: pointer;  
+  transition: 0.3s ease;  
+  margin-top: 25px;  
+}  
+
+.info-btn:hover {  
+  transform: scale(1.05);  
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);  
+}  
+
+.info-box {  
+  display: none;  
+  margin-top: 20px;  
+  padding: 20px;  
+  border-radius: 16px;  
+  background: #ffffff;  
+  color: #333;  
+  line-height: 1.6;  
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);  
+}
+
 /* FOOTER */
 footer{
     background:linear-gradient(90deg,var(--green),var(--orange));
@@ -213,7 +243,6 @@ footer{
             </div>
         </div>
 
-        <!-- ✅ UPDATED CARD -->
         <div class="card" onclick="toggleInfo(this)">
             <div class="icon">♻️</div>
             <h3>Recycling Program</h3>
@@ -229,7 +258,23 @@ footer{
 <!-- ABOUT -->
 <section id="about">
     <h2 style="font-family:Montserrat;color:var(--green);font-size:32px;">About Barangay 28</h2>
-    <p>Barangay 28 is an urban barangay in Caloocan City, NCR.</p>
+    <p>Barangay 28 is an urban barangay located in Caloocan City, NCR. It is a densely populated area with residential neighborhoods, small businesses, and active community programs.</p>
+
+    <button class="info-btn" onclick="toggleAboutInfo()">
+        Learn More About Barangay 28 ▾
+    </button>
+
+    <div id="barangayInfo" class="info-box">
+        <p>
+            Barangay 28 is focused on promoting a clean and safe environment for its residents. The local government implements regular waste collection schedules, community clean-up drives, and waste segregation programs to encourage responsible waste management.
+        </p>
+        <p>
+            The barangay also supports educational programs on environmental awareness, organizes recycling initiatives, and coordinates with residents to maintain streets, parks, and public spaces. Safety, cleanliness, and community engagement are top priorities for Barangay 28.
+        </p>
+        <p>
+            Additionally, the barangay has facilities for residents’ convenience, including public halls, health centers, and local business areas, making it a vibrant and organized urban community in Caloocan City.
+        </p>
+    </div>
 
     <button class="next-btn" onclick="showPage('contact')">Next Page →</button>
 </section>
@@ -301,6 +346,12 @@ function showPage(page){
 
 function toggleInfo(card){
     card.classList.toggle("active");
+}
+
+// ABOUT PAGE INFO BUTTON
+function toggleAboutInfo(){
+    const info = document.getElementById("barangayInfo");
+    info.style.display = info.style.display === "block" ? "none" : "block";
 }
 </script>
 
